@@ -1,21 +1,32 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Class that provide spawning of trash on belt.
+/// </summary>
 public class TrashSpawner : MonoBehaviour
 {
     [SerializeField]
+    private bool isSpawning;
+    [SerializeField]
     private float respawnTime;
     private float timer;
-    public bool isSpawning = false;
-
+    
+    [Space]
     [SerializeField]
     private GameObject[] trashObjects;
 
     /// <summary>
+    /// On/Off trash spawning proccess.
+    /// </summary>
+    public void SetSpawning(bool value)
+    {
+        isSpawning = value;
+    }
+
+    /// <summary>
     /// Setting up respawn cooldown.
     /// </summary>
-    public void SetRespawn(float value)
+    public void SetRespawnTime(float value)
     {
         respawnTime = value;
         timer = value;
@@ -38,7 +49,7 @@ public class TrashSpawner : MonoBehaviour
     {
         Instantiate(
             trashObjects[Random.Range(0, trashObjects.Length)],
-            transform.position + new Vector3((Random.value * 2 - 1) / 2, 0, 0),
+            transform.position + new Vector3(0, 0, Random.value * 2 - 1),
             Quaternion.Euler(0, Random.Range(-180, 180), 0),
             transform);
     }

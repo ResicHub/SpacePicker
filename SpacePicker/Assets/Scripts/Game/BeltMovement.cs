@@ -1,13 +1,15 @@
 using UnityEngine;
 
+/// <summary>
+/// Ñlass that provides rotation of all belt cylinders.
+/// </summary>
 public class BeltMovement : MonoBehaviour
 {
     [SerializeField]
+    private bool isMoving;
+    [SerializeField]
     private float movementSpeed;
-    [SerializeField]
-    private const float speedMultyplier = 50f;
-    [SerializeField]
-    private bool isMoving = true;
+    private const float speedMultiplier = 100f;
 
     /// <summary>
     /// Setting belt movement speed.
@@ -20,7 +22,7 @@ public class BeltMovement : MonoBehaviour
     /// <summary>
     /// On/Off belt movement.
     /// </summary>
-    public void Switch(bool value)
+    public void SetMovement(bool value)
     {
         isMoving = value;
     }
@@ -31,7 +33,9 @@ public class BeltMovement : MonoBehaviour
         {
             foreach (Transform roller in transform)
             {
-                roller.Rotate(Vector3.up * movementSpeed * speedMultyplier * Time.deltaTime);
+                Rigidbody rollerRB = roller.GetComponent<Rigidbody>();
+                Quaternion deltaRotation = Quaternion.Euler(Vector3.up * movementSpeed * speedMultiplier * Time.fixedDeltaTime);
+                rollerRB.MoveRotation(roller.rotation * deltaRotation);
             }
         }
     }
