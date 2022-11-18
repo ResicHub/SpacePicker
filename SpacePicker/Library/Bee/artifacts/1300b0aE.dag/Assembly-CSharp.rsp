@@ -529,6 +529,8 @@
 "Assets/Oculus/Voice/Lib/Wit.ai/AssemblyInfo.cs"
 "Assets/Scripts/Game/BeltMovement.cs"
 "Assets/Scripts/Game/GameManager.cs"
+"Assets/Scripts/Game/RecycleZone.cs"
+"Assets/Scripts/Game/TrashObject.cs"
 "Assets/Scripts/Game/TrashSpawner.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01_UGUI.cs"
