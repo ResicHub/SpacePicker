@@ -453,7 +453,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4830437458418925524, guid: 13c6dfd09392a9743b0e8c11e91e5605, type: 3}
       propertyPath: m_Name
-      value: Container (2)
+      value: Container3
       objectReference: {fileID: 0}
     - target: {fileID: 5890090808613174462, guid: 13c6dfd09392a9743b0e8c11e91e5605, type: 3}
       propertyPath: m_RootOrder
@@ -1345,7 +1345,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3668301639092368269, guid: ae417e491e3ff8d488d12d2fa6604042, type: 3}
       propertyPath: m_Name
-      value: RecycleZone
+      value: Zone1
       objectReference: {fileID: 0}
     - target: {fileID: 9167833011128401640, guid: ae417e491e3ff8d488d12d2fa6604042, type: 3}
       propertyPath: m_RootOrder
@@ -1824,7 +1824,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3668301639092368269, guid: ae417e491e3ff8d488d12d2fa6604042, type: 3}
       propertyPath: m_Name
-      value: RecycleZone (2)
+      value: Zone3
       objectReference: {fileID: 0}
     - target: {fileID: 9167833011128401640, guid: ae417e491e3ff8d488d12d2fa6604042, type: 3}
       propertyPath: m_RootOrder
@@ -2992,6 +2992,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 882722015}
+  - component: {fileID: 882722016}
   m_Layer: 0
   m_Name: RecycleZones
   m_TagString: Untagged
@@ -3017,6 +3018,19 @@ Transform:
   m_Father: {fileID: 1264817710}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &882722016
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 882722014}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!95 &914546315 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 95332594524483946, guid: 6fae51a9f4170334e8639e8dbfc0a54b, type: 3}
@@ -3686,7 +3700,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4830437458418925524, guid: 13c6dfd09392a9743b0e8c11e91e5605, type: 3}
       propertyPath: m_Name
-      value: Container
+      value: Container1
       objectReference: {fileID: 0}
     - target: {fileID: 5890090808613174462, guid: 13c6dfd09392a9743b0e8c11e91e5605, type: 3}
       propertyPath: m_RootOrder
@@ -4517,7 +4531,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3668301639092368269, guid: ae417e491e3ff8d488d12d2fa6604042, type: 3}
       propertyPath: m_Name
-      value: RecycleZone (1)
+      value: Zone2
       objectReference: {fileID: 0}
     - target: {fileID: 9167833011128401640, guid: ae417e491e3ff8d488d12d2fa6604042, type: 3}
       propertyPath: m_RootOrder
@@ -5372,7 +5386,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4830437458418925524, guid: 13c6dfd09392a9743b0e8c11e91e5605, type: 3}
       propertyPath: m_Name
-      value: Container (1)
+      value: Container2
       objectReference: {fileID: 0}
     - target: {fileID: 5890090808613174462, guid: 13c6dfd09392a9743b0e8c11e91e5605, type: 3}
       propertyPath: m_RootOrder
