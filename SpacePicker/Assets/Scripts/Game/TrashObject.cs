@@ -10,4 +10,9 @@ public class TrashObject : MonoBehaviour
     /// </summary>
     [SerializeField]
     public readonly int Category;
+
+    private void Start()
+    {
+        gameObject.tag = "Trash";
+    }
 }
