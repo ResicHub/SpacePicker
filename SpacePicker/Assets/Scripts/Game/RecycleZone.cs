@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 /// <summary>
@@ -7,10 +8,18 @@ using UnityEngine;
 public class RecycleZone : MonoBehaviour
 {
     [SerializeField]
-    private readonly int category;
+    private int category;
 
     private int localCaughtCount;
     private int localMissedCount;
+
+    private BoxCollider collider;
+
+    private void Awake()
+    {
+        collider = GetComponent<BoxCollider>();
+        collider.enabled = false;
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -26,5 +35,17 @@ public class RecycleZone : MonoBehaviour
             }
             Destroy(other.gameObject);
         }
+    }
+
+    public void CleanContainer()
+    {
+        StartCoroutine(CleanContainerCoroutine());
+    }
+
+    private IEnumerator CleanContainerCoroutine()
+    {
+        collider.enabled = true;
+        yield return new WaitForSecondsRealtime(1f);
+        collider.enabled = false;
     }
 }
