@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 501505305399171547}
   - component: {fileID: 3756080672158887409}
   - component: {fileID: 6668725952776685870}
+  - component: {fileID: 191864928776148698}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -64,7 +65,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 5fc14533d62e20a42b115648a28e2a15, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -127,3 +128,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbd3041e5329af24095b2783db14893f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Category: 0
+--- !u!114 &191864928776148698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 501505305399171548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d1a7708e76601b4ea829921c33bc624, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_allowOffhandGrab: 1
+  m_snapPosition: 0
+  m_snapOrientation: 0
+  m_snapOffset: {fileID: 0}
+  m_grabPoints: []
+  m_materialColorField: 

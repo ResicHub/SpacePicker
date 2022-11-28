@@ -9,7 +9,7 @@ public class TrashObject : MonoBehaviour
     /// Returns category number.
     /// </summary>
     [SerializeField]
-    public readonly int Category;
+    public int Category;
 
     private void Start()
     {
