@@ -13,14 +13,6 @@ public class RecycleZone : MonoBehaviour
     private int localCaughtCount;
     private int localMissedCount;
 
-    private BoxCollider collider;
-
-    private void Awake()
-    {
-        collider = GetComponent<BoxCollider>();
-        collider.enabled = false;
-    }
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.transform.tag == "Trash")
@@ -37,15 +29,15 @@ public class RecycleZone : MonoBehaviour
         }
     }
 
-    public void CleanContainer()
+    /// <summary>
+    /// Sends data of caught and missed count to GameManager.
+    /// </summary>
+    public int[] GetLocalCounts()
     {
-        StartCoroutine(CleanContainerCoroutine());
-    }
-
-    private IEnumerator CleanContainerCoroutine()
-    {
-        collider.enabled = true;
-        yield return new WaitForSecondsRealtime(1f);
-        collider.enabled = false;
+        int caughtCount = localCaughtCount;
+        int missedCount = localMissedCount;
+        localCaughtCount = 0;
+        localMissedCount = 0;
+        return new int[2] { caughtCount, missedCount };
     }
 }

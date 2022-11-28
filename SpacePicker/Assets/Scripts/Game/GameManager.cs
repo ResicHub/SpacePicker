@@ -8,36 +8,38 @@ public class GameManager : MonoBehaviour
     private TrashSpawner spawner;
     [SerializeField]
     private BeltMovement belt;
+    [SerializeField]
+    private Containers containers;
 
     private bool gameOn;
-    private int level;
-
-    private static int caughtCount;
-    private static int missedCount;
 
     private void Start()
     {
         gameOn = false;
-        level = 1;
-        caughtCount = 0;
-        missedCount = 0;
-
         StartCoroutine(GameStartCoroutine());
     }
 
     private IEnumerator GameStartCoroutine()
     {
         OVRScreenFade.instance.FadeIn();
-        yield return new WaitForSecondsRealtime(4);
+        yield return new WaitForSecondsRealtime(2f);
+        containers.CreateContainer(0);
+        containers.CreateContainer(1);
+        containers.CreateContainer(2);
+
+        yield return new WaitForSecondsRealtime(2f);
 
         gameOn = true;
         spawner.SetSpawning(true);
         belt.SetMovement(true);
     }
 
-    private static void ChangeCounter(int increaseCought, int increaseMissed)
+    /// <summary>
+    /// Sends container with number to recycle,
+    /// </summary>
+    /// <param name="number"></param>
+    public void ContainerButtonPressed(int number)
     {
-        caughtCount += increaseCought;
-        missedCount += increaseMissed;
+        containers.SendContainerToRecycle(number);
     }
 }
