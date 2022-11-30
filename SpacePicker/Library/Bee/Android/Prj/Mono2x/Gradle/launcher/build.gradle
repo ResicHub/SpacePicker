@@ -16,7 +16,7 @@ android {
     defaultConfig {
         minSdkVersion 23
         targetSdkVersion 30
-        applicationId 'com.DefaultCompany.SpacePicker'
+        applicationId 'com.ResicHub.SpacePicker'
         ndk {
             abiFilters 'armeabi-v7a'
         }

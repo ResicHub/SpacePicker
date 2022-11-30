@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "applicationId": "com.DefaultCompany.SpacePicker",
+  "applicationId": "com.ResicHub.SpacePicker",
   "variantType": "BASE_APK",
   "elements": [
     {
@@ -19,7 +19,7 @@
       },
       "path": "resources-release.ap_",
       "properties": {
-        "packageId": "com.DefaultCompany.SpacePicker",
+        "packageId": "com.ResicHub.SpacePicker",
         "split": "",
         "minSdkVersion": "23"
       }

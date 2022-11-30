@@ -1,4 +1,4 @@
-#Mon Nov 14 00:14:15 KRAT 2022
+#Wed Nov 30 23:04:26 KRAT 2022
 base.0=D\:\\Unity\\Projects\\SpacePicker\\SpacePicker\\Library\\Bee\\Android\\Prj\\Mono2x\\Gradle\\launcher\\build\\intermediates\\dex\\release\\mergeDexRelease\\classes.dex
 path.0=classes.dex
 renamed.0=classes.dex
