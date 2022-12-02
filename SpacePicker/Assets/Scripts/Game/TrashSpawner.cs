@@ -49,7 +49,7 @@ public class TrashSpawner : MonoBehaviour
     {
         Instantiate(
             trashObjects[Random.Range(0, trashObjects.Length)],
-            transform.position + new Vector3(0, 0, Random.value * 2 - 1),
+            transform.position + new Vector3(0, 0, (Random.value * 2 - 1) / 4f),
             Quaternion.Euler(0, Random.Range(-180, 180), 0),
             transform);
     }

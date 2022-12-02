@@ -36,7 +36,7 @@ public class Containers : MonoBehaviour
     /// <param name="number"></param>
     public void CreateContainer(int number)
     {
-        Vector3 initPosition = new Vector3(containesrsXPositions[number], 40, 0);
+        Vector3 initPosition = new Vector3(containesrsXPositions[number], 10, 0);
 
         GameObject container = Instantiate(
             containerPrefab,
@@ -70,7 +70,7 @@ public class Containers : MonoBehaviour
         if (isMovingToStart)
         {
             // Moving of containers to central position and openingthem.
-            StartCoroutine(MoveCoroutine(container, container.localPosition + new Vector3(0, -40, 0)));
+            StartCoroutine(MoveCoroutine(container, container.localPosition + new Vector3(0, -10, 0)));
             yield return new WaitForSecondsRealtime(2f);
             StartCoroutine(RotateTopPartCoroutine(containerTopPart, containerOpenedQuaternion));
         }
@@ -88,9 +88,9 @@ public class Containers : MonoBehaviour
             recycleZones[number].enabled = !recycleZones[number].enabled;
 
             // Moving of containers off the scene and destroing them.
-            StartCoroutine(MoveCoroutine(container, container.localPosition + new Vector3(0, 0, -80)));
+            StartCoroutine(MoveCoroutine(container, container.localPosition + new Vector3(0, 0, -20)));
             yield return new WaitForSecondsRealtime(1f);
-            StartCoroutine(MoveCoroutine(container, container.localPosition + new Vector3(0, -80, 0)));
+            StartCoroutine(MoveCoroutine(container, container.localPosition + new Vector3(0, -20, 0)));
             yield return new WaitForSecondsRealtime(1f);
             containers[number] = null;
             Destroy(container.gameObject);
