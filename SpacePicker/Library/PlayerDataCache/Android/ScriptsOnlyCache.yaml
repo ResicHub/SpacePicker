@@ -5,25 +5,39 @@ ScriptsOnlyBuild:
     - CharacterCameraConstraint
     - Containers
     - GameManager
-    - OculusSampleFramework.DistanceGrabbable
-    - OculusSampleFramework.DistanceGrabber
-    - OculusSampleFramework.GrabManager
     - PlayerController
     - RecycleZone
     - SimpleCapsuleWithStickMovement
     - TrashObject
     - TrashSpawner
     Oculus.Interaction.Samples.dll:
+    - Oculus.Interaction.AudioPhysics
     - Oculus.Interaction.AudioTrigger
+    - Oculus.Interaction.Samples.HideHandVisualOnGrab
+    - Oculus.Interaction.Samples.RespawnOnDrop
+    - Oculus.Interaction.Samples.ShouldHideHandOnGrab
     Oculus.Interaction.dll:
     - Oculus.Interaction.ActiveStateTracker
     - Oculus.Interaction.CircleProximityField
     - Oculus.Interaction.ControllerActiveState
+    - Oculus.Interaction.ControllerOffset
     - Oculus.Interaction.ControllerPointerPose
+    - Oculus.Interaction.ControllerSelector
+    - Oculus.Interaction.GrabAPI.HandGrabAPI
+    - Oculus.Interaction.GrabInteractable
+    - Oculus.Interaction.GrabInteractor
+    - Oculus.Interaction.GrabStrengthIndicator
+    - Oculus.Interaction.Grabbable
     - Oculus.Interaction.HandActiveState
+    - Oculus.Interaction.HandGrab.HandGrabInteractable
+    - Oculus.Interaction.HandGrab.HandGrabInteractor
+    - Oculus.Interaction.HandGrab.HandGrabStateVisual
     - Oculus.Interaction.HandJoint
+    - Oculus.Interaction.HandPinchOffset
     - Oculus.Interaction.HandPokeLimiterVisual
+    - Oculus.Interaction.HandTransformScaler
     - Oculus.Interaction.HandVisual
+    - Oculus.Interaction.HandWristOffset
     - Oculus.Interaction.Input.Controller
     - Oculus.Interaction.Input.ControllerRef
     - Oculus.Interaction.Input.Filter.HandFilter
@@ -37,12 +51,16 @@ ScriptsOnlyBuild:
     - Oculus.Interaction.Input.Hmd
     - Oculus.Interaction.Input.LastKnownGoodHand
     - Oculus.Interaction.Input.OVRCameraRigRef
-    - Oculus.Interaction.Input.SyntheticHand
     - Oculus.Interaction.Input.TrackingToWorldTransformerOVR
     - Oculus.Interaction.Input.Visuals.OVRControllerVisual
+    - Oculus.Interaction.InteractableColorVisual
     - Oculus.Interaction.InteractableDebugVisual
+    - Oculus.Interaction.InteractableGroupView
+    - Oculus.Interaction.InteractorDebugVisual
     - Oculus.Interaction.InteractorGroup
     - Oculus.Interaction.MaterialPropertyBlockEditor
+    - Oculus.Interaction.PhysicsGrabbable
+    - Oculus.Interaction.PointableUnityEventWrapper
     - Oculus.Interaction.PokeInteractable
     - Oculus.Interaction.PokeInteractableVisual
     - Oculus.Interaction.PokeInteractor
@@ -51,7 +69,9 @@ ScriptsOnlyBuild:
     - Oculus.Interaction.PoseDetection.JointDeltaProvider
     - Oculus.Interaction.PoseDetection.TransformFeatureStateProvider
     - Oculus.Interaction.Surfaces.PlaneSurface
-    - Oculus.Interaction.TagSetFilter
+    - Oculus.Interaction.Throw.ControllerPoseInputDevice
+    - Oculus.Interaction.Throw.HandPoseInputDevice
+    - Oculus.Interaction.Throw.StandardVelocityCalculator
     Oculus.Spatializer.dll:
     - ONSPSettings
     Oculus.VR.Editor.dll:
@@ -62,6 +82,7 @@ ScriptsOnlyBuild:
     - OVRControllerHelper
     - OVRDebugInfo
     - OVRHand
+    - OVRHeadsetEmulator
     - OVRManager
     - OVRRuntimeSettings
     - OVRScreenFade
@@ -94,6 +115,7 @@ ScriptsOnlyBuild:
     - UnityEditor.TestTools.TestRunner.TestRun.TestJobDataHolder
   serializedClasses:
     Oculus.Interaction:
+    - Oculus.Interaction.Input.OneEuroFilterPropertyBlock
     - Oculus.Interaction.MaterialPropertyVector
     - Oculus.Interaction.PokeInteractable/DragThresholdingConfig
     - Oculus.Interaction.PokeInteractable/PositionPinningConfig
@@ -101,6 +123,7 @@ ScriptsOnlyBuild:
     - Oculus.Interaction.PoseDetection.FingerFeatureStateThreshold
     - Oculus.Interaction.PoseDetection.FingerFeatureThresholds
     - Oculus.Interaction.ProgressCurve
+    - Oculus.Interaction.Throw.StandardVelocityCalculator/BufferingParams
     Oculus.Interaction.Samples:
     - Oculus.Interaction.MinMaxPair
     Oculus.VR.Editor:
@@ -180,23 +203,25 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2270}
     - Class: 114
+      Script: {instanceID: 2350}
+    - Class: 114
       Script: {instanceID: 2500}
     - Class: 114
       Script: {instanceID: 2570}
     - Class: 114
       Script: {instanceID: 2668}
     - Class: 114
-      Script: {instanceID: 2680}
-    - Class: 114
       Script: {instanceID: 2686}
+    - Class: 114
+      Script: {instanceID: 2764}
     - Class: 114
       Script: {instanceID: 3244}
     - Class: 114
       Script: {instanceID: 3398}
     - Class: 114
-      Script: {instanceID: 3606}
+      Script: {instanceID: 3720}
     - Class: 114
-      Script: {instanceID: 3784}
+      Script: {instanceID: 3776}
     - Class: 114
       Script: {instanceID: 3878}
     - Class: 114
@@ -204,11 +229,19 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 4154}
     - Class: 114
+      Script: {instanceID: 4304}
+    - Class: 114
       Script: {instanceID: 4406}
+    - Class: 114
+      Script: {instanceID: 4748}
     - Class: 114
       Script: {instanceID: 4846}
     - Class: 114
-      Script: {instanceID: 5244}
+      Script: {instanceID: 4994}
+    - Class: 114
+      Script: {instanceID: 5086}
+    - Class: 114
+      Script: {instanceID: 5130}
     - Class: 114
       Script: {instanceID: 5336}
     - Class: 114
@@ -219,6 +252,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 5444}
     - Class: 114
       Script: {instanceID: 5492}
+    - Class: 114
+      Script: {instanceID: 5866}
     - Class: 114
       Script: {instanceID: 5882}
     - Class: 114
@@ -232,17 +267,27 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 6754}
     - Class: 114
+      Script: {instanceID: 6790}
+    - Class: 114
       Script: {instanceID: 6802}
     - Class: 114
       Script: {instanceID: 6828}
     - Class: 114
       Script: {instanceID: 6910}
     - Class: 114
+      Script: {instanceID: 6960}
+    - Class: 114
       Script: {instanceID: 6966}
+    - Class: 114
+      Script: {instanceID: 7014}
     - Class: 114
       Script: {instanceID: 7146}
     - Class: 114
+      Script: {instanceID: 7306}
+    - Class: 114
       Script: {instanceID: 7344}
+    - Class: 114
+      Script: {instanceID: 7504}
     - Class: 114
       Script: {instanceID: 7538}
     - Class: 114
@@ -250,9 +295,13 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 7642}
     - Class: 114
+      Script: {instanceID: 7802}
+    - Class: 114
       Script: {instanceID: 7918}
     - Class: 114
       Script: {instanceID: 8262}
+    - Class: 114
+      Script: {instanceID: 8384}
     - Class: 114
       Script: {instanceID: 8418}
     - Class: 114
@@ -284,8 +333,6 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10012}
     - Class: 114
-      Script: {instanceID: 10016}
-    - Class: 114
       Script: {instanceID: 10270}
     - Class: 114
       Script: {instanceID: 10376}
@@ -296,6 +343,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10524}
     - Class: 114
+      Script: {instanceID: 10654}
+    - Class: 114
       Script: {instanceID: 10790}
     - Class: 114
       Script: {instanceID: 10882}
@@ -303,6 +352,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 11000}
     - Class: 114
       Script: {instanceID: 11040}
+    - Class: 114
+      Script: {instanceID: 11142}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -4313,5 +4364,5 @@ ScriptsOnlyBuild:
   platform: 13
   scenePathNames:
   - Assets/Scenes/Game.unity
-  playerPath: D:/Unity/Projects/SpacePicker/Builds/7 Test collab of poke interact
-    and distance grab.apk
+  playerPath: D:/Unity/Projects/SpacePicker/Builds/10 Test transformer player controller
+    at my scene.apk
