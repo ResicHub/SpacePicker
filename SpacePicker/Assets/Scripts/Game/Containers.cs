@@ -36,7 +36,7 @@ public class Containers : MonoBehaviour
     /// <param name="number"></param>
     public void CreateContainer(int number)
     {
-        Vector3 initPosition = new Vector3(containesrsXPositions[number], 10, 0);
+        Vector3 initPosition = new Vector3(containesrsXPositions[number], 9.75f, 0);
 
         GameObject container = Instantiate(
             containerPrefab,
@@ -79,13 +79,13 @@ public class Containers : MonoBehaviour
             // Closing of containers and counting of caught and missed trash.
             StartCoroutine(RotateTopPartCoroutine(containerTopPart, containerClosedQuaternion));
             yield return new WaitForSecondsRealtime(1f);
-            recycleZones[number].enabled = !recycleZones[number].enabled;
+            recycleZones[number].gameObject.SetActive(recycleZones[number].gameObject.activeSelf);
             yield return new WaitForSecondsRealtime(0.5f);
             int[] counts = recycleZones[number].GetLocalCounts();
             caughtCount += counts[0];
             missedCount += counts[1];
             yield return new WaitForSecondsRealtime(0.5f);
-            recycleZones[number].enabled = !recycleZones[number].enabled;
+            recycleZones[number].gameObject.SetActive(recycleZones[number].gameObject.activeSelf);
 
             // Moving of containers off the scene and destroing them.
             StartCoroutine(MoveCoroutine(container, container.localPosition + new Vector3(0, 0, -20)));
