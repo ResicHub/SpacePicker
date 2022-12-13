@@ -19,6 +19,16 @@ public class GameManager : MonoBehaviour
         StartCoroutine(GameStartCoroutine());
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            ContainerButtonPressed(0);
+            ContainerButtonPressed(1);
+            ContainerButtonPressed(2);
+        }
+    }
+
     private IEnumerator GameStartCoroutine()
     {
         OVRScreenFade.instance.FadeIn();

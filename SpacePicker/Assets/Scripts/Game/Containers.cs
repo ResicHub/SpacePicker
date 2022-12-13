@@ -14,9 +14,10 @@ public class Containers : MonoBehaviour
     private const float speed = 0.3f;
 
     [SerializeField]
-    private RecycleZone[] recycleZones;
-
-    private Transform[] containers = new Transform[3] { null, null, null};
+    private BoxCollider[] recycleZonesColliders;
+    [SerializeField]
+    private Transform[] containers = new Transform[3] { null, null, null };
+    private bool[] canRecreateContainer = new bool[] { true, true, true };
 
     private static int caughtCount;
     private static int missedCount;
@@ -36,6 +37,7 @@ public class Containers : MonoBehaviour
     /// <param name="number"></param>
     public void CreateContainer(int number)
     {
+        canRecreateContainer[number] = false;
         Vector3 initPosition = new Vector3(containesrsXPositions[number], 9.75f, 0);
 
         GameObject container = Instantiate(
@@ -55,7 +57,11 @@ public class Containers : MonoBehaviour
     /// <param name="number"></param>
     public void SendContainerToRecycle(int number)
     {
-        StartCoroutine(MoveContainerCoroutine(number, false));
+        if (canRecreateContainer[number] && containers[number] != null)
+        {
+            canRecreateContainer[number] = false;
+            StartCoroutine(MoveContainerCoroutine(number, false));
+        }
     }
 
     public int[] GetCounts()
@@ -66,34 +72,36 @@ public class Containers : MonoBehaviour
     private IEnumerator MoveContainerCoroutine(int number, bool isMovingToStart)
     {
         Transform container = containers[number];
-        Transform containerTopPart = container.transform.Find("ContainerTopPart");
+        Transform containerTopPart = container.Find("ContainerTopPart");
         if (isMovingToStart)
         {
             // Moving of containers to central position and openingthem.
             StartCoroutine(MoveCoroutine(container, container.localPosition + new Vector3(0, -10, 0)));
             yield return new WaitForSecondsRealtime(2f);
             StartCoroutine(RotateTopPartCoroutine(containerTopPart, containerOpenedQuaternion));
+            yield return new WaitForSecondsRealtime(2f);
+            canRecreateContainer[number] = true;
         }
         else
         {
             // Closing of containers and counting of caught and missed trash.
             StartCoroutine(RotateTopPartCoroutine(containerTopPart, containerClosedQuaternion));
-            yield return new WaitForSecondsRealtime(1f);
-            recycleZones[number].gameObject.SetActive(recycleZones[number].gameObject.activeSelf);
-            yield return new WaitForSecondsRealtime(0.5f);
-            int[] counts = recycleZones[number].GetLocalCounts();
+            yield return new WaitForSecondsRealtime(2f);
+            recycleZonesColliders[number].enabled = !recycleZonesColliders[number].enabled;
+            yield return new WaitForSecondsRealtime(0.1f);
+            int[] counts = recycleZonesColliders[number].gameObject.GetComponent<RecycleZone>().GetLocalCounts();
             caughtCount += counts[0];
             missedCount += counts[1];
-            yield return new WaitForSecondsRealtime(0.5f);
-            recycleZones[number].gameObject.SetActive(recycleZones[number].gameObject.activeSelf);
+            recycleZonesColliders[number].enabled = !recycleZonesColliders[number].enabled;
+
+            // Create new empty container and move it to central position.
+            CreateContainer(number);
 
             // Moving of containers off the scene and destroing them.
             StartCoroutine(MoveCoroutine(container, container.localPosition + new Vector3(0, 0, -20)));
             yield return new WaitForSecondsRealtime(1f);
             StartCoroutine(MoveCoroutine(container, container.localPosition + new Vector3(0, -20, 0)));
-            yield return new WaitForSecondsRealtime(1f);
-            containers[number] = null;
-            Destroy(container.gameObject);
+            Destroy(container.gameObject, 3f);
         }
     }
 

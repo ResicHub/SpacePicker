@@ -66,7 +66,7 @@ GameObject:
   - component: {fileID: 8907291391168957280}
   - component: {fileID: 4570295309994306513}
   - component: {fileID: 2712368535165850960}
-  - component: {fileID: 445640712564641386}
+  - component: {fileID: 6636919341329920681}
   - component: {fileID: 8528602330812173932}
   - component: {fileID: 6462358387328942263}
   - component: {fileID: 8288747209310398473}
@@ -144,7 +144,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &445640712564641386
+--- !u!65 &6636919341329920681
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -155,8 +155,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.29999998, y: 0.15000002, z: 0.3}
-  m_Center: {x: 0, y: -0.000000007450581, z: -0.025000006}
+  m_Size: {x: 0.24, y: 0.12, z: 0.24000001}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &8528602330812173932
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -189,7 +189,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _grabbable: {fileID: 8528602330812173932}
   _rigidbody: {fileID: 8288747209310398473}
-  _scaleMassWithSize: 1
+  _scaleMassWithSize: 0
 --- !u!54 &8288747209310398473
 Rigidbody:
   m_ObjectHideFlags: 0
